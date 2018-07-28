@@ -1,0 +1,39 @@
+body { background: lightgrey;
+}
+#home {
+    background-color: lightgray;
+    }
+    
+    #infoLinks {
+       padding-right: 8px;
+        border-right: rgb(12, 102, 133) 1px solid ;
+    }
+    
+    #survey {
+        background: lightgrey;
+    }
+    .container-fluid {
+        border: 1px solid darkgrey;
+        background: white;
+        border-radius: 5px;
+        padding: 2%;
+        box-shadow: 0 0 5px darkgrey;
+    }
+  
+    .dropdown-menu a {
+        display: block;
+    }
+    .dropdown-item {
+        display: block !important;
+    }
+    /* .force {
+        display: block;
+    } */
+    .smallerBox {
+        max-width: 900px;
+        width: 100%;
+        margin-top: 3%;
+    }
+    .formSelects {
+        margin-bottom: 2%;
+    }

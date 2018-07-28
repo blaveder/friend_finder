@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Find A Friend Survey</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+        crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" media="screen" href="pretty.css" />
+
+
+
+    <script src="/app/data/friends.js"></script>
+    <link href="/css/styles.css" rel="stylesheet">
+
+</head>
+
+<body>
+    <div class="container-fluid smallerBox">
+        <!-- The Modal -->
+        <div class="modal" id="myModal">
+            <div class="modal-dialog">
+                <div class="modal-content">
+
+                    <!-- Modal Header -->
+                    <div class="modal-header">
+                        <h4 class="modal-title">Friend with the Closest Match</h4>
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+
+                    <!-- Modal body -->
+                    <div class="modal-body">
+                        <h2 id="matchName"></h2>
+                        <img id="matchPhoto" src="https://placeimg.com/640/480/tech
+https://placeimg.com/640/480/tech
+">
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="formSelects">
+            <h3>Name (Required)</h3>
+            <input type="text" id="name" placeholder="name">
+        </div>
+        <div class="formSelects">
+            <h3>link to photo (Required)</h3>
+            <input type="text" id="image" placeholder="link to photo">
+        </div>
+        <div class="formSelects">
+            <h4></h4>
+            <h3>Do you like oasters?</h3>
+            <select id="questionOne">
+                <option type="text" value="" disabled selected>Choose...wisely</option>
+                <option type="text" value="1">1 (Strongly Disagree)</option>
+                <option type="text" value="2">2</option>
+                <option type="text" value="3">3</option>
+                <option type="text" value="4">4</option>
+                <option type="text" value="5">5 (Strongly Agree)</option>
+            </select>
+        </div>
+        <div class="formSelects">
+            <h4></h4>
+            <h3>Do you like to eat?</h3>
+            <select id="questionTwo">
+                <option type="text" value="" disabled selected>Choose...wisely</option>
+                <option type="text" value="1">1 (Strongly Disagree)</option>
+                <option type="text" value="2">2</option>
+                <option type="text" value="3">3</option>
+                <option type="text" value="4">4</option>
+                <option type="text" value="5">5 (Strongly Agree)</option>
+            </select>
+        </div>
+        <div class="formSelects">
+            <h4></h4>
+            <h3>How much do you like Game of Thrones?</h3>
+            <select id="questionThree">
+                <option type="text" value="">Choose...wisely</option>
+                <option type="text" value="1">1 (Strongly Disagree)</option>
+                <option type="text" value="2">2</option>
+                <option type="text" value="3">3</option>
+                <option type="text" value="4">4</option>
+                <option type="text" value="5">5 (Strongly Agree)</option>
+            </select>
+        </div>
+        <div class="formSelects">
+            <h4></h4>
+            <h3>Would you agree that Batman is cooler then Superman?</h3>
+            <select id="questionFour">
+                <option type="text" value="">Choose...wisely</option>
+                <option type="text" value="1">1 (Strongly Disagree)</option>
+                <option type="text" value="2">2</option>
+                <option type="text" value="3">3</option>
+                <option type="text" value="4">4</option>
+                <option type="text" value="5">5 (Strongly Agree)</option>
+            </select>
+        </div>
+        <div class="formSelects">
+            <h4></h4>
+            <h3>Trump?...nuff said.</h3>
+            <select id="questionFive">
+                <option type="text" value="">Choose...wisely</option>
+                <option type="text" value="1">1 (Strongly Disagree)</option>
+                <option type="text" value="2">2</option>
+                <option type="text" value="3">3</option>
+                <option type="text" value="4">4</option>
+                <option type="text" value="5">5 (Strongly Agree)</option>
+            </select>
+        </div>
+        <div class="formSelects">
+            <h4></h4>
+            <h3>orange juice?</h3>
+            <select id="questionSix">
+                <option type="text" value="">Choose...wisely</option>
+                <option type="text" value="1">1 (Strongly Disagree)</option>
+                <option type="text" value="2">2</option>
+                <option type="text" value="3">3</option>
+                <option type="text" value="4">4</option>
+                <option type="text" value="5">5 (Strongly Agree)</option>
+            </select>
+        </div>
+        <div class="formSelects">
+            <h4></h4>
+            <h3>Naps are a necessary evil?</h3>
+            <select id="questionSeven">
+                <option type="text" value="">Choose...wisely</option>
+                <option type="text" value="1">1 (Strongly Disagree)</option>
+                <option type="text" value="2">2</option>
+                <option type="text" value="3">3</option>
+                <option type="text" value="4">4</option>
+                <option type="text" value="5">5 (Strongly Agree)</option>
+            </select>
+        </div>
+        <div class="formSelects">
+            <h4></h4>
+            <h3>Is Angelica mean?</h3>
+            <select id="questionEight">
+                <option type="text" value="">Choose...wisely</option>
+                <option type="text" value="1">1 (Strongly Disagree)</option>
+                <option type="text" value="2">2</option>
+                <option type="text" value="3">3</option>
+                <option type="text" value="4">4</option>
+                <option type="text" value="5">5 (Strongly Agree)</option>
+            </select>
+        </div>
+        <div class="formSelects">
+            <h4></h4>
+            <h3>You think Grampa's teeth are....alive?</h3>
+            <select id="questionNine">
+                <option type="text" value="">Choose...wisely</option>
+                <option type="text" value="1">1 (Strongly Disagree)</option>
+                <option type="text" value="2">2</option>
+                <option type="text" value="3">3</option>
+                <option type="text" value="4">4</option>
+                <option type="text" value="5">5 (Strongly Agree)</option>
+            </select>
+        </div>
+        <div class="formSelects">
+            <h4></h4>
+            <h3>Do you like Raptar?</h3>
+            <select id="questionTen">
+                <option type="text" value="">Choose...wisely</option>
+                <option type="text" value="1">1 (Strongly Disagree)</option>
+                <option type="text" value="2">2</option>
+                <option type="text" value="3">3</option>
+                <option type="text" value="4">4</option>
+                <option type="text" value="5">5 (Strongly Agree)</option>
+            </select>
+        </div>
+        <button type="submit" id="submit" class="btn btn-primary">Submit</button>
+
+
+        <br>
+        <br>
+        <!-- **// API Friends should be the information on friends already entered in JSON format on screen.// -->
+        <p>
+            <a href="/api/friends">API Friends List</a>
+            <a href="https://github.com/NOEL86/findafriend">GitHub Repo</a>
+        </p>
+
+    </div>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript">
+
+
+
+        $("#submit").on("click", function (event) {
+            var n = $("#name");
+            var p = $("#image");
+            var a = $('#questionOne');
+            var b = $('#questionTwo');
+            var c = $('#questionThree');
+            var d = $('#questionFour');
+            var e = $('#questionFive');
+            var f = $('#questionSix');
+            var g = $('#questionSeven');
+            var h = $('#questionEight');
+            var i = $('#questionNine');
+            var j = $('#questionTen');
+
+            event.preventDefault();
+
+            var newFriend = {
+                name: n.val().trim(),
+                photo: p.val().trim(),
+
+                scores: [
+                    a.val(),
+                    b.val(),
+                    c.val(),
+                    d.val(),
+                    e.val(),
+                    f.val(),
+                    g.val(),
+                    h.val(),
+                    i.val(),
+                    j.val()
+
+                ]
+            }
+
+            //once you take the values of the response from the user
+            //create a function to send the values to be checked against
+            // //friends already created to determine compatability scores
+
+            if (n.val() === "" || p.val() === "" || a.val() === "" || b.val() === "" || c.val() === "" || d.val() === "" || e.val() === "" || f.val() === "" || g.val() === "" || h.val() === "" || i.val() === "" || j.val() === "") {
+                alert("please complete form");
+            } else {
+                console.log("all filled");
+                console.log('new friend = ' + JSON.stringify(newFriend));
+                var currentURL = window.location.origin;
+                console.log(currentURL);
+                $.post(currentURL + "/api/friends", newFriend, function (data) {
+                    console.log(newFriend);
+                    $("#matchName").text(friendData.name);
+                    $("#matchPhoto").attr("src", friendData.photo);
+                    $("#myModal").modal("toggle");
+
+                    n.val("");
+                    p.val("");
+                    a.val("");
+                    b.val("");
+                    c.val("");
+                    d.val("");
+                    e.val("");
+                    f.val("");
+                    g.val("");
+                    h.val("");
+                    i.val("");
+                    j.val("");
+                });
+
+
+
+
+            }
+
+
+
+
+        })
+    </script>
+
+</body>
+
+</html>
