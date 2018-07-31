@@ -1,77 +1,59 @@
-var express = require("express");
-var fs = require('fs');
-var friends = require("../data/friends");
-var app = express();
+// Pull in required dependencies
+var path = require('path');
 
+// Import the list of friend entries
+var friends = require('../data/friends.js');
 
-
-// var path = require('path');
-
+// Export API routes
 module.exports = function (app) {
-    console.log("my apps are working");
-    console.log("-------------------");
+    // console.log('___ENTER apiRoutes.js___');
+
+    // Total list of friend entries
     app.get('/api/friends', function (req, res) {
         res.json(friends);
-
     });
 
-
-    ////////////////////////////////////////
-
+    // Add new friend entry
     app.post('/api/friends', function (req, res) {
+        // Capture the user input object
+        var userInput = req.body;
+        // console.log('userInput = ' + JSON.stringify(userInput));
 
+        var userResponses = userInput.scores;
+        // console.log('userResponses = ' + userResponses);
 
-        // We will use this object to hold the "best match". We will constantly update it as we
-        // loop through all of the options
-        console.log(req.body);
-        var bestMatch = {
-            name: "",
-            photo: "",
-            friendDifference: Infinity
-        };
+        // Compute best friend match
+        var matchName = '';
+        var matchImage = '';
+        var totalDifference = 10000; // Make the initial value big for comparison
 
-        // Here we take the result of the user"s survey POST and parse it.
-        var userData = req.body;
-        var userScores = userData.scores;
+        // Examine all existing friends in the list
+        for (var i = 0; i < friends.length; i++) {
+            // console.log('friend = ' + JSON.stringify(friends[i]));
 
-        // This variable will calculate the difference between the user"s scores and the scores of
-        // each user in the database
-        var totalDifference;
-
-        // Here we loop through all database.
-        for (var i = 0; i < friendsData.length; i++) {
-            var currentFriend = friendsData[i];
-            totalDifference = 0;
-
-            console.log(currentFriend.name);
-
-            // We then loop through all the scores of each friend in database
-            for (var j = 0; j < currentFriend.scores.length; j++) {
-                var currentFriendScore = currentFriend.scores[j];
-                var currentUserScore = userScores[j];
-
-                // We calculate the difference between the scores and sum them into the totalDifference
-                totalDifference += Math.abs(parseInt(currentUserScore) - parseInt(currentFriendScore));
+            // Compute differenes for each question
+            var diff = 0;
+            for (var j = 0; j < userResponses.length; j++) {
+                diff += Math.abs(friends[i].scores[j] - userResponses[j]);
             }
+            // console.log('diff = ' + diff);
 
-            // If the sum of differences is less then the differences of the current "best match"
-            if (totalDifference <= bestMatch.friendDifference) {
-                // Reset the bestMatch to be the new friend.
-                bestMatch.name = currentFriend.name;
-                bestMatch.photo = currentFriend.photo;
-                bestMatch.friendDifference = totalDifference;
+            // If lowest difference, record the friend match
+            if (diff < totalDifference) {
+                // console.log('Closest match found = ' + diff);
+                // console.log('Friend name = ' + friends[i].name);
+                // console.log('Friend image = ' + friends[i].photo);
+
+                totalDifference = diff;
+                matchName = friends[i].name;
+                matchImage = friends[i].photo;
             }
         }
 
+        // Add new user
+        friends.push(userInput);
 
-        friendsData.push(userData);
-
-        // Return a JSON with the user's bestMatch. This will be used by the HTML in the next page
-        console.log(bestMatch);
-        res.json(bestMatch);
-
-    })
-
-    /////////////////////////////\n' + JSON.stringify(req.body)   newFriend.push(friends(JSON.stringify(req.body)))
-
-}
+        // Send appropriate response
+        res.json({ status: 'OK', matchName: matchName, matchImage: matchImage });
+    });
+};

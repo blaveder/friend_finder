@@ -1,5 +1,6 @@
-body { background: lightgrey;
+body { background: url('../images/bg.png')
 }
+
 #home {
     background-color: lightgray;
     }
@@ -13,11 +14,14 @@ body { background: lightgrey;
         background: lightgrey;
     }
     .container-fluid {
+        width: 100%;
+        max-width: 900px;
+        margin: 2% auto;
         border: 1px solid darkgrey;
         background: white;
         border-radius: 5px;
         padding: 2%;
-        box-shadow: 0 0 5px darkgrey;
+        box-shadow: 0 0 15px purple;
     }
   
     .dropdown-menu a {
@@ -36,4 +40,16 @@ body { background: lightgrey;
     }
     .formSelects {
         margin-bottom: 2%;
+    }
+    h3 {
+        font-size: 1.92rem !important;
+        line-height: normal !important;
+         border-bottom: 1px solid;
+        padding-bottom: 10px;
+    }
+    footer.page-footer {
+
+        padding-top: 20px;
+        background-color: purple !important;
+    
     }

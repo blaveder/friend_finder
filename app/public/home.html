@@ -1,51 +1,82 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
-    <meta charset="UTF-8">
-    <title>Friend Finder : HOME</title>
+    <title>Friend Finder: Rugrats</title>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 
-    <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link href="/css/styles.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/css/materialize.min.css">
 
+    <!-- Compiled and minified Materialize JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/js/materialize.min.js"></script>
 </head>
 
 <body>
+    <header>
+        <nav>
+            <div class="nav-wrapper">
 
-    <div class="container" style="margin-top: 3%;">
-
-        <div class="jumbotron">
-            <h1 class="text-left">
-                <span class="fa fa-fire"></span> Friend Finder</h1>
-            <hr>
-            <h2 class="text-left">Answer a few basic questions.</h2>
-            <h2 class="text-left">Then find the friend with the greatest compatibility!</h2>
-            <br>
-
-            <div class="text-left">
-                <a href="/survey">
-                    <button class="btn btn-lg btn-primary">
-                        <span class="fa fa-list-alt"></span> Go to Survey</button>
-                </a>
-
+                <a href="/" class="brand-logo" id="logo">Friend Finder</a>
+                <ul class="right hide-on-med-and-down" id="head-nav-links">
+                    <li>
+                        <a href="/survey">Survey</a>
+                    </li>
+                    <li>
+                        <a href="/api/friends">API Friends List</a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/blaveder/friend_finder">GitHub Repo</a>
+                    </li>
+                </ul>
             </div>
+        </nav>
+    </header>
 
+    <main>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div id="mainpanel-content">
+                        <h1>Friend Finder</h1>
+                        <div class="divider"></div>
+                        <h2>Answer a few basic questions.</h2>
+                        <h2>Find the friend with the greatest compatibility!</h2>
+                        <a href="/survey">
+                            <button class="btn waves-effect waves-light" type="submit" name="action">Go to Survey
+                                <i class="material-icons right">send</i>
+                            </button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="page-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col l6 s12">
+                    <h5 class="white-text">Friend Finder Rugrats</h5>
+                    <p class="grey-text text-lighten-4">Thank you for taking the brief survey. Your responses will be used for training purposes only :-].</p>
+                </div>
+                <div class="col l4 offset-l2 s12">
+                    <h5 class="white-text">Links</h5>
+                    <ul>
+                        <li>
+                            <a class="grey-text text-lighten-3" href="/api/friends">API Friends List</a>
+                        </li>
+                        <li>
+                            <a class="grey-text text-lighten-3" href="https://github.com/blaveder/friend_finder">GitHub Repo</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
         </div>
 
-        <footer class="footer">
-            <div class="container">
-                <p>
-                    <a href="/api/tables">API Friends list</a> |
-
-                    <a href="https://github.com/afhaque/FriendFinder">GitHub Repo</a>
-                </p>
-            </div>
-        </footer>
-
-    </div>
-
+    </footer>
 
 </body>
 

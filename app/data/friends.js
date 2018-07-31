@@ -33,7 +33,7 @@ var friendsArray = [
     },
     {
         name: 'Lillian',
-        photo: 'https://78.media.tumblr.com/6dddaa093093952f73f191fb4c651e34/tumblr_p4ig3fPs831rr1og1o3_500.jpg',
+        photo: '../images/lil.jpg',
         scores: [
             '0',
             '4',
@@ -50,6 +50,22 @@ var friendsArray = [
     {
         name: 'Angelica',
         photo: 'https://vignette.wikia.nocookie.net/rugrats/images/d/d3/Rugrats_-_Cool_Hand_Angelica_20.png/revision/latest?cb=20150906014610',
+        scores: [
+            '1',
+            '3',
+            '4',
+            '1',
+            '3',
+            '5',
+            '5',
+            '5',
+            '5',
+            '3'
+        ]
+    },
+    {
+        name: 'Reptar',
+        photo: 'https://upload.wikimedia.org/wikipedia/en/thumb/1/17/Reptar_from_Rugrats.png/220px-Reptar_from_Rugrats.png',
         scores: [
             '1',
             '3',

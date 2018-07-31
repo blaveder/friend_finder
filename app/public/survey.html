@@ -2,268 +2,283 @@
 <html>
 
 <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Find A Friend Survey</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+    <title>Friend Finder: Rugrats</title>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B"
         crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" media="screen" href="pretty.css" />
+    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/css/materialize.min.css">
 
-
-
-    <script src="/app/data/friends.js"></script>
-    <link href="/css/styles.css" rel="stylesheet">
-
+    <!-- Compiled and minified Materialize JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/js/materialize.min.js"></script>
 </head>
 
 <body>
-    <div class="container-fluid smallerBox">
-        <!-- The Modal -->
-        <div class="modal" id="myModal">
-            <div class="modal-dialog">
-                <div class="modal-content">
+    <header>
+        <nav>
+            <div class="nav-wrapper">
 
-                    <!-- Modal Header -->
-                    <div class="modal-header">
-                        <h4 class="modal-title">Friend with the Closest Match</h4>
-                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <a href="/" class="brand-logo" id="logo">Friend Finder</a>
+                <ul class="right hide-on-med-and-down" id="head-nav-links">
+                    <li>
+                        <a href="/survey">Survey</a>
+                    </li>
+                    <li>
+                        <a href="/api/friends">API Friends List</a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/blaveder/friend_finder">GitHub Repo</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div id="mainpanel-content">
+                        <h1>Survey Questions</h1>
+                        <div class="divider"></div>
+
+                        <h3>About You</h3>
+
+                        <div class="input-field col s6">
+                            <h5>Name (Required)</h5>
+
+                            <input type="text" class="validate" placeholder="Your Name Here" id="userName">
+                        </div>
+
+                        <div class="input-field col s6">
+                            <h5>Link to Photo Image (Required)</h5>
+
+                            <input type="text" class="validate" placeholder="Photo Link Here" id="userPhoto">
+                        </div>
+
+                        <!-- Survey Questions -->
+                        <div class="input-field col s12">
+                            <h3>Question 1</h3>
+                            <h5>Things never turn out like they do in movies.</h5>
+                            <select id="q1">
+                                <option value="" disabled selected>Choose your option</option>
+                                <option value="1">1 (Strongly Disagree)</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5 (Strongly Agree)</option>
+                            </select>
+                        </div>
+
+                        <div class="input-field col s12">
+                            <h3>Question 2</h3>
+                            <h5>Juice bumps are real!!!...not a question.</h5>
+                            <select id="q2">
+                                <option value="" disabled selected>Choose your option</option>
+                                <option value="1">1 (Strongly Disagree)</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5 (Strongly Agree)</option>
+                            </select>
+                        </div>
+
+                        <div class="input-field col s12">
+                            <h3>Question 3</h3>
+                            <h5>Reptar's movies are th best.</h5>
+                            <select id="q3">
+                                <option value="" disabled selected>Choose your option</option>
+                                <option value="1">1 (Strongly Disagree)</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5 (Strongly Agree)</option>
+                            </select>
+                        </div>
+
+                        <div class="input-field col s12">
+                            <h3>Question 4</h3>
+                            <h5>Chuckie really becoming a chicken?.</h5>
+                            <select id="q4">
+                                <option value="" disabled selected>Choose your option</option>
+                                <option value="1">1 (Strongly Disagree)</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5 (Strongly Agree)</option>
+                            </select>
+                        </div>
+
+                        <div class="input-field col s12">
+                            <h3>Question 5</h3>
+                            <h5>One babies pile of garbage is another ones play ground?</h5>
+                            <select id="q5">
+                                <option value="" disabled selected>Choose your option</option>
+                                <option value="1">1 (Strongly Disagree)</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5 (Strongly Agree)</option>
+                            </select>
+                        </div>
+
+                        <div class="input-field col s12">
+                            <h3>Question 6</h3>
+                            <h5>Phil is the most handsomemest-tist... brother.</h5>
+                            <select id="q6">
+                                <option value="" disabled selected>Choose your option</option>
+                                <option value="1">1 (Strongly Disagree)</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5 (Strongly Agree)</option>
+                            </select>
+                        </div>
+
+                        <div class="input-field col s12">
+                            <h3>Question 7</h3>
+                            <h5>Parents can cook food, but need to stay away from the play pin?</h5>
+                            <select id="q7">
+                                <option value="" disabled selected>Choose your option</option>
+                                <option value="1">1 (Strongly Disagree)</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5 (Strongly Agree)</option>
+                            </select>
+                        </div>
+
+                        <div class="input-field col s12">
+                            <h3>Question 8</h3>
+                            <h5>Morning naps are the best time of the day for naps?</h5>
+                            <select id="q8">
+                                <option value="" disabled selected>Choose your option</option>
+                                <option value="1">1 (Strongly Disagree)</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5 (Strongly Agree)</option>
+                            </select>
+                        </div>
+
+                        <div class="input-field col s12">
+                            <h3>Question 9</h3>
+                            <h5>Mirrors are more science then anything else in the world...you explain it then!</h5>
+                            <select id="q9">
+                                <option value="" disabled selected>Choose your option</option>
+                                <option value="1">1 (Strongly Disagree)</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5 (Strongly Agree)</option>
+                            </select>
+                        </div>
+
+                        <div class="input-field col s12">
+                            <h3>Question 10</h3>
+                            <h5>Anglica is the queen of this place.</h5>
+                            <select id="q10">
+                                <option value="" disabled selected>Choose your option</option>
+                                <option value="1">1 (Strongly Disagree)</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5 (Strongly Agree)</option>
+                            </select>
+                        </div>
+
+                        <!-- Survey Submit Button -->
+                        <div>
+                            <button class="btn waves-effect waves-light" type="submit" name="action" id="submitButton">Submit Responses
+
+                            </button>
+                        </div>
                     </div>
-
-                    <!-- Modal body -->
-                    <div class="modal-body">
-                        <h2 id="matchName"></h2>
-                        <img id="matchPhoto" src="https://placeimg.com/640/480/tech
-https://placeimg.com/640/480/tech
-">
-                    </div>
-
                 </div>
             </div>
         </div>
-        <div class="formSelects">
-            <h3>Name (Required)</h3>
-            <input type="text" id="name" placeholder="name">
+    </main>
+
+    <footer class="page-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col l6 s12">
+                    <h5 class="white-text">Friend Finder App</h5>
+                    <p class="grey-text text-lighten-4">Thank you for taking the brief survey. Regardless of your responses, we all know its Reptar</p>
+                </div>
+                <div class="col l4 offset-l2 s12">
+                    <h5 class="white-text">Links</h5>
+                    <ul>
+                        <li>
+                            <a class="grey-text text-lighten-3" href="/api/friends">API Friends List</a>
+                        </li>
+                        <li>
+                            <a class="grey-text text-lighten-3" href="https://github.com/blaveder/friend_finder">GitHub Repo</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
         </div>
-        <div class="formSelects">
-            <h3>link to photo (Required)</h3>
-            <input type="text" id="image" placeholder="link to photo">
-        </div>
-        <div class="formSelects">
-            <h4></h4>
-            <h3>Do you like oasters?</h3>
-            <select id="questionOne">
-                <option type="text" value="" disabled selected>Choose...wisely</option>
-                <option type="text" value="1">1 (Strongly Disagree)</option>
-                <option type="text" value="2">2</option>
-                <option type="text" value="3">3</option>
-                <option type="text" value="4">4</option>
-                <option type="text" value="5">5 (Strongly Agree)</option>
-            </select>
-        </div>
-        <div class="formSelects">
-            <h4></h4>
-            <h3>Do you like to eat?</h3>
-            <select id="questionTwo">
-                <option type="text" value="" disabled selected>Choose...wisely</option>
-                <option type="text" value="1">1 (Strongly Disagree)</option>
-                <option type="text" value="2">2</option>
-                <option type="text" value="3">3</option>
-                <option type="text" value="4">4</option>
-                <option type="text" value="5">5 (Strongly Agree)</option>
-            </select>
-        </div>
-        <div class="formSelects">
-            <h4></h4>
-            <h3>How much do you like Game of Thrones?</h3>
-            <select id="questionThree">
-                <option type="text" value="">Choose...wisely</option>
-                <option type="text" value="1">1 (Strongly Disagree)</option>
-                <option type="text" value="2">2</option>
-                <option type="text" value="3">3</option>
-                <option type="text" value="4">4</option>
-                <option type="text" value="5">5 (Strongly Agree)</option>
-            </select>
-        </div>
-        <div class="formSelects">
-            <h4></h4>
-            <h3>Would you agree that Batman is cooler then Superman?</h3>
-            <select id="questionFour">
-                <option type="text" value="">Choose...wisely</option>
-                <option type="text" value="1">1 (Strongly Disagree)</option>
-                <option type="text" value="2">2</option>
-                <option type="text" value="3">3</option>
-                <option type="text" value="4">4</option>
-                <option type="text" value="5">5 (Strongly Agree)</option>
-            </select>
-        </div>
-        <div class="formSelects">
-            <h4></h4>
-            <h3>Trump?...nuff said.</h3>
-            <select id="questionFive">
-                <option type="text" value="">Choose...wisely</option>
-                <option type="text" value="1">1 (Strongly Disagree)</option>
-                <option type="text" value="2">2</option>
-                <option type="text" value="3">3</option>
-                <option type="text" value="4">4</option>
-                <option type="text" value="5">5 (Strongly Agree)</option>
-            </select>
-        </div>
-        <div class="formSelects">
-            <h4></h4>
-            <h3>orange juice?</h3>
-            <select id="questionSix">
-                <option type="text" value="">Choose...wisely</option>
-                <option type="text" value="1">1 (Strongly Disagree)</option>
-                <option type="text" value="2">2</option>
-                <option type="text" value="3">3</option>
-                <option type="text" value="4">4</option>
-                <option type="text" value="5">5 (Strongly Agree)</option>
-            </select>
-        </div>
-        <div class="formSelects">
-            <h4></h4>
-            <h3>Naps are a necessary evil?</h3>
-            <select id="questionSeven">
-                <option type="text" value="">Choose...wisely</option>
-                <option type="text" value="1">1 (Strongly Disagree)</option>
-                <option type="text" value="2">2</option>
-                <option type="text" value="3">3</option>
-                <option type="text" value="4">4</option>
-                <option type="text" value="5">5 (Strongly Agree)</option>
-            </select>
-        </div>
-        <div class="formSelects">
-            <h4></h4>
-            <h3>Is Angelica mean?</h3>
-            <select id="questionEight">
-                <option type="text" value="">Choose...wisely</option>
-                <option type="text" value="1">1 (Strongly Disagree)</option>
-                <option type="text" value="2">2</option>
-                <option type="text" value="3">3</option>
-                <option type="text" value="4">4</option>
-                <option type="text" value="5">5 (Strongly Agree)</option>
-            </select>
-        </div>
-        <div class="formSelects">
-            <h4></h4>
-            <h3>You think Grampa's teeth are....alive?</h3>
-            <select id="questionNine">
-                <option type="text" value="">Choose...wisely</option>
-                <option type="text" value="1">1 (Strongly Disagree)</option>
-                <option type="text" value="2">2</option>
-                <option type="text" value="3">3</option>
-                <option type="text" value="4">4</option>
-                <option type="text" value="5">5 (Strongly Agree)</option>
-            </select>
-        </div>
-        <div class="formSelects">
-            <h4></h4>
-            <h3>Do you like Raptar?</h3>
-            <select id="questionTen">
-                <option type="text" value="">Choose...wisely</option>
-                <option type="text" value="1">1 (Strongly Disagree)</option>
-                <option type="text" value="2">2</option>
-                <option type="text" value="3">3</option>
-                <option type="text" value="4">4</option>
-                <option type="text" value="5">5 (Strongly Agree)</option>
-            </select>
-        </div>
-        <button type="submit" id="submit" class="btn btn-primary">Submit</button>
+
+    </footer>
 
 
-        <br>
-        <br>
-        <!-- **// API Friends should be the information on friends already entered in JSON format on screen.// -->
-        <p>
-            <a href="/api/friends">API Friends List</a>
-            <a href="https://github.com/NOEL86/findafriend">GitHub Repo</a>
-        </p>
-
+    <div id="modal1" class="modal">
+        <div class="modal-content">
+            <h4>Closest Friend Match</h4>
+            <div class="divider"></div>
+            <h5 id="userMatch"></h5>
+            <img id="userMatchImage" class="materialboxed" style="width: 100%; max-width: 300px;" src="">
+        </div>
+        <div class="modal-footer">
+            <a href="/survey" class="modal-action modal-close waves-effect waves-green btn-flat">Again! Again!</a>
+        </div>
     </div>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.bundle.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
     <script type="text/javascript">
-
-
-
-        $("#submit").on("click", function (event) {
-            var n = $("#name");
-            var p = $("#image");
-            var a = $('#questionOne');
-            var b = $('#questionTwo');
-            var c = $('#questionThree');
-            var d = $('#questionFour');
-            var e = $('#questionFive');
-            var f = $('#questionSix');
-            var g = $('#questionSeven');
-            var h = $('#questionEight');
-            var i = $('#questionNine');
-            var j = $('#questionTen');
-
+        $(document).ready(function () {
+            $('select').material_select();
+            $('.modal').modal({
+                dismissible: false, // Modal can be dismissed by clicking outside of the modal
+                opacity: .5, // Opacity of modal background
+                inDuration: 300, // Transition in duration
+                outDuration: 200, // Transition out duration
+                startingTop: '4%', // Starting top style attribute
+                endingTop: '10%' // Ending top style attribute
+            });
+        });
+        // Activate submit button
+        $('#submitButton').on('click', function (event) {
             event.preventDefault();
-
-            var newFriend = {
-                name: n.val().trim(),
-                photo: p.val().trim(),
-
+            // Gather user inputs
+            var userInput = {
+                name: $('#userName').val().trim(),
+                photo: $('#userPhoto').val().trim(),
                 scores: [
-                    a.val(),
-                    b.val(),
-                    c.val(),
-                    d.val(),
-                    e.val(),
-                    f.val(),
-                    g.val(),
-                    h.val(),
-                    i.val(),
-                    j.val()
-
+                    $('#q1').val().trim(),
+                    $('#q2').val().trim(),
+                    $('#q3').val().trim(),
+                    $('#q4').val().trim(),
+                    $('#q5').val().trim(),
+                    $('#q6').val().trim(),
+                    $('#q7').val().trim(),
+                    $('#q8').val().trim(),
+                    $('#q9').val().trim(),
+                    $('#q10').val().trim()
                 ]
-            }
+            };
 
-            //once you take the values of the response from the user
-            //create a function to send the values to be checked against
-            // //friends already created to determine compatability scores
+            $.post('/api/friends', userInput)
+                .done(function (data) {
 
-            if (n.val() === "" || p.val() === "" || a.val() === "" || b.val() === "" || c.val() === "" || d.val() === "" || e.val() === "" || f.val() === "" || g.val() === "" || h.val() === "" || i.val() === "" || j.val() === "") {
-                alert("please complete form");
-            } else {
-                console.log("all filled");
-                console.log('new friend = ' + JSON.stringify(newFriend));
-                var currentURL = window.location.origin;
-                console.log(currentURL);
-                $.post(currentURL + "/api/friends", newFriend, function (data) {
-                    console.log(newFriend);
-                    $("#matchName").text(friendData.name);
-                    $("#matchPhoto").attr("src", friendData.photo);
-                    $("#myModal").modal("toggle");
+                    $('#userMatch').html(data.matchName);
+                    $("#userMatchImage").attr("src", data.matchImage);
 
-                    n.val("");
-                    p.val("");
-                    a.val("");
-                    b.val("");
-                    c.val("");
-                    d.val("");
-                    e.val("");
-                    f.val("");
-                    g.val("");
-                    h.val("");
-                    i.val("");
-                    j.val("");
+                    $('#modal1').modal('open');
                 });
-
-
-
-
-            }
-
-
-
-
-        })
+        });
     </script>
-
 </body>
 
 </html>
